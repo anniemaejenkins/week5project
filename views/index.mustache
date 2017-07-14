@@ -3,8 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <h1>Hey</h1>
+    <h1>HANGMAN</h1>
+    <span>You have 8 guesses left!</span>
+    <ul>
+      {{#gameWord}}
+      <li class="letterSpace">{{.}}</li>
+      {{/gameWord}}
+    </ul>
+    <form class="" action="/" method="post">
+      <input type="text" id="letter"name="letter" value="">
+      <input type="submit" name="" value="Guess Letter">
+    </form>
   </body>
 </html>
