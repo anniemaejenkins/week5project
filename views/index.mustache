@@ -6,14 +6,44 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+
     <h1>HANGMAN</h1>
-    <span>You have 8 guesses left!</span>
-    <ul>
+    <span>You have {{guessesLeft}} guesses left!</span>
+
+    <section>
+
+    <div class="allLetters">
+      <!-- the word that was generated -->
+      {{#letters}}
+        <span>{{.}}</span>
+      {{/letters}}
+    </div>
+  </section>
+
+    <div class="errors">
+        {{#errors}}
+          <span>{{.}}</span>
+        {{/errors}}
+        <!-- shows the letters selected -->
+        {{#duplicate}}
+          <span>{{.}}</span>
+        {{/duplicate}}
+    </div>
+    <div class="lettersGuessed">
+      {{#lettersUsed}}
+        <span>{{.}}</span>
+      {{/lettersUsed}}
+    </div>
+    <!-- this will show the gameOver results based on the if statement
+    that is in the login controller file -->
+    {{#gameOver}}{{.}}{{/gameOver}}
+
+    <!-- <ul>
       {{#gameWord}}
       <li class="letterSpace">{{.}}</li>
       {{/gameWord}}
-    </ul>
-    <form class="" action="/" method="post">
+    </ul> -->
+    <form class="" action="" method="post">
       <input type="text" id="letter" name="letter" value="">
       <input type="submit" name="" value="Guess Letter">
     </form>
